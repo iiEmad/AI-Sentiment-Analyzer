@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+
+{% block title %}
+SentiVision AI | About
+{% endblock %}
+
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-8">
+
+
+            <div class="card shadow-lg border-0 rounded-4">
+
+                <div class="card-body p-5 text-center">
+
+
+                    <h1 class="display-4 fw-bold mb-4">
+
+                        🤖 About SentiVision AI
+
+                    </h1>
+
+
+                    <p class="lead text-muted">
+
+                        An Artificial Intelligence based sentiment analysis system
+                        that understands the emotional tone of written text.
+
+                    </p>
+
+
+                    <hr class="my-5">
+
+
+                    <div class="row">
+
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="card h-100 shadow-sm border-0">
+
+                                <div class="card-body">
+
+
+                                    <h3>
+
+                                        🧠 AI Technology
+
+                                    </h3>
+
+
+                                    <p>
+
+                                        Powered by Transformer based Natural Language
+                                        Processing models for accurate sentiment
+                                        prediction.
+
+                                    </p>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-md-6 mb-4">
+
+                            <div class="card h-100 shadow-sm border-0">
+
+                                <div class="card-body">
+
+
+                                    <h3>
+
+                                        🗄️ Data Storage
+
+                                    </h3>
+
+
+                                    <p>
+
+                                        Uses SQLite database technology to securely
+                                        store analysis history.
+
+                                    </p>
+
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <hr class="my-5">
+
+
+
+                    <h3>
+
+                        Developer Information
+
+                    </h3>
+
+
+                    <div class="mt-4">
+
+
+                        <p class="fs-5">
+
+                            <strong>
+
+                                Developed by:
+
+                            </strong>
+
+                            {{ developer }}
+
+                        </p>
+
+
+                        <p class="fs-5">
+
+                            <strong>
+
+                                UID:
+
+                            </strong>
+
+                            {{ uid }}
+
+                        </p>
+
+
+                        <p class="fs-5">
+
+                            <strong>
+
+                                Version:
+
+                            </strong>
+
+                            {{ version }}
+
+                        </p>
+
+
+                    </div>
+
+
+
+                    <div class="alert alert-info mt-5">
+
+
+                        <i class="bi bi-info-circle"></i>
+
+
+                        This project demonstrates the practical implementation
+                        of Artificial Intelligence, Machine Learning, and Web
+                        Development concepts.
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

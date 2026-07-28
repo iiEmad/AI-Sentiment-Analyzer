@@ -1,0 +1,406 @@
+/*
+=========================================================
+SentiVision AI
+Professional Frontend Styling
+
+Developed by:
+Emad Ali
+UID: 24BSC10027
+=========================================================
+*/
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+
+body {
+
+    font-family: 'Poppins', sans-serif;
+
+    min-height: 100vh;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef2ff,
+        #f8fafc
+    );
+
+    color: #1f2937;
+
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+
+.navbar {
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #111827,
+        #2563eb
+    );
+
+    padding: 15px 0;
+
+}
+
+
+.navbar-brand {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+}
+
+
+.nav-link {
+
+    color: white !important;
+
+    margin-left: 15px;
+
+    transition: 0.3s;
+
+}
+
+
+.nav-link:hover {
+
+    color: #93c5fd !important;
+
+}
+
+
+
+/* =========================
+   CARDS
+========================= */
+
+
+.card {
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: rgba(
+        255,
+        255,
+        255,
+        0.9
+    );
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.35s;
+
+}
+
+
+.card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+
+    0 20px 40px
+    rgba(
+        0,
+        0,
+        0,
+        0.12
+    );
+
+}
+
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+
+h1,
+h2,
+h3,
+h4 {
+
+    font-weight: 700;
+
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+
+.btn-primary {
+
+    background:
+
+    linear-gradient(
+        45deg,
+        #2563eb,
+        #7c3aed
+    );
+
+    border: none;
+
+    border-radius: 12px;
+
+    padding: 12px 25px;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-primary:hover {
+
+    transform: scale(1.03);
+
+}
+
+
+
+/* =========================
+   TEXT AREA
+========================= */
+
+
+textarea {
+
+    border-radius: 15px !important;
+
+    border: 2px solid #e5e7eb !important;
+
+    padding: 20px !important;
+
+    font-size: 1rem;
+
+}
+
+
+textarea:focus {
+
+    border-color: #2563eb !important;
+
+    box-shadow:
+
+    0 0 15px
+    rgba(
+        37,
+        99,
+        235,
+        0.25
+    ) !important;
+
+}
+
+
+
+/* =========================
+   RESULT SECTION
+========================= */
+
+
+.badge {
+
+    padding: 10px 18px;
+
+    border-radius: 50px;
+
+    font-size: 0.95rem;
+
+}
+
+
+
+/* =========================
+   PROGRESS BAR
+========================= */
+
+
+.progress {
+
+    height: 30px;
+
+    border-radius: 50px;
+
+    background: #e5e7eb;
+
+}
+
+
+.progress-bar {
+
+    font-weight: 600;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+}
+
+
+
+/* =========================
+   TABLES
+========================= */
+
+
+.table {
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+}
+
+
+.table thead {
+
+    background:
+
+    linear-gradient(
+        90deg,
+        #111827,
+        #2563eb
+    );
+
+    color:white;
+
+}
+
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+
+.display-5 {
+
+    font-weight: 800;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+.footer {
+
+    margin-top: 60px;
+
+    padding: 25px;
+
+    background:
+
+    rgba(
+        255,
+        255,
+        255,
+        0.7
+    );
+
+}
+
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+
+@keyframes fadeUp {
+
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+.card {
+
+    animation:
+
+    fadeUp
+    0.5s ease;
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media(max-width:768px){
+
+
+    .display-4 {
+
+        font-size:2.2rem;
+
+    }
+
+
+    .card-body {
+
+        padding:25px !important;
+
+    }
+
+
+    .navbar-brand {
+
+        font-size:1.2rem;
+
+    }
+
+}

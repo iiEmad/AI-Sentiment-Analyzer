@@ -1,0 +1,293 @@
+{% extends "base.html" %}
+
+{% block title %}
+SentiVision AI | Analysis History
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <!-- Header -->
+
+    <div class="text-center mb-5">
+
+        <h1 class="display-5 fw-bold">
+
+            📜 Analysis History
+
+        </h1>
+
+        <p class="text-muted">
+
+            Every sentiment analysis stored in the local SQLite database.
+
+        </p>
+
+    </div>
+
+
+    <!-- Statistics -->
+
+    <div class="row mb-4">
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0">
+
+                <div class="card-body text-center">
+
+                    <h5>Total Records</h5>
+
+                    <h2>{{ history|length }}</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0">
+
+                <div class="card-body text-center">
+
+                    <h5>Database</h5>
+
+                    <h2>SQLite</h2>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <div class="card shadow border-0">
+
+                <div class="card-body text-center">
+
+                    <h5>Status</h5>
+
+                    <span class="badge bg-success fs-6">
+
+                        Connected
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Search -->
+
+    <div class="card shadow border-0 mb-4">
+
+        <div class="card-body">
+
+            <input
+
+                type="text"
+
+                id="historySearch"
+
+                class="form-control"
+
+                placeholder="Search previous analyses...">
+
+        </div>
+
+    </div>
+
+
+    <!-- Table -->
+
+    <div class="card shadow-lg border-0">
+
+        <div class="card-body">
+
+            {% if history %}
+
+            <div class="table-responsive">
+
+                <table
+
+                    class="table table-hover align-middle"
+
+                    id="historyTable">
+
+                    <thead class="table-dark">
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Text</th>
+
+                            <th>Sentiment</th>
+
+                            <th>Confidence</th>
+
+                            <th>Date</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for row in history %}
+
+                        <tr>
+
+                            <td>
+
+                                {{ row["id"] }}
+
+                            </td>
+
+                            <td style="max-width:350px;">
+
+                                {{ row["text"] }}
+
+                            </td>
+
+                            <td>
+
+                                {% if row["sentiment"]=="POSITIVE" %}
+
+                                <span class="badge bg-success">
+
+                                    😊 Positive
+
+                                </span>
+
+                                {% elif row["sentiment"]=="NEGATIVE" %}
+
+                                <span class="badge bg-danger">
+
+                                    😞 Negative
+
+                                </span>
+
+                                {% else %}
+
+                                <span class="badge bg-warning text-dark">
+
+                                    😐 Neutral
+
+                                </span>
+
+                                {% endif %}
+
+                            </td>
+
+                            <td>
+
+                                <div class="progress">
+
+                                    <div
+
+                                        class="progress-bar"
+
+                                        style="width: {{ row['confidence'] }}%;">
+
+                                        {{ row["confidence"] }}%
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+                            <td>
+
+                                {{ row["created_at"] }}
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            {% else %}
+
+            <div class="text-center py-5">
+
+                <h2>
+
+                    📭
+
+                </h2>
+
+                <h4>
+
+                    No History Available
+
+                </h4>
+
+                <p class="text-muted">
+
+                    Perform your first sentiment analysis to populate this page.
+
+                </p>
+
+                <a
+
+                    href="/"
+
+                    class="btn btn-primary">
+
+                    Analyze Text
+
+                </a>
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const search=document.getElementById("historySearch");
+
+if(search){
+
+search.addEventListener("keyup",function(){
+
+let value=this.value.toLowerCase();
+
+let rows=document.querySelectorAll("#historyTable tbody tr");
+
+rows.forEach(function(row){
+
+row.style.display=row.innerText.toLowerCase().includes(value)?"":"none";
+
+});
+
+});
+
+}
+
+</script>
+
+{% endblock %}
